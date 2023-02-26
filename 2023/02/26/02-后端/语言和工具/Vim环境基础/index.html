@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		Vim环境基础 | 
+	 
+	Hogg&#39;s Notes
+	</title>
+	
+	<!-- keywords,description -->
+	 
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "wujun234.com";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
+	
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">Hogg's Notes</a>
+
+	<ul id="menu">
+    
+
+    
+
+    
+
+    
+      
+      
+        <li class="menu-item">
+          <a href='https://github.com/wujun234/hexo-theme-tree' class="menu-item-link" target="_blank">
+            Tree
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a href='https://github.com/wujun234/uid-generator-spring-boot-starter' class="menu-item-link" target="_blank">
+            UidGenerator
+          </a>
+        </li>
+      
+    
+  
+    
+      <li class="menu-item">
+        <a href='https://github.com/wujun234' class="menu-item-link" target="_blank">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+      </li>
+    
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										02-后端
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										语言和工具
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/02-%E5%90%8E%E7%AB%AF/%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B7%A5%E5%85%B7/C++%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                     
+										    C++基础语法入门
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/02-%E5%90%8E%E7%AB%AF/%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B7%A5%E5%85%B7/GolangBasic%E8%AF%AD%E6%B3%95%E5%89%96%E6%9E%90/">
+                     
+										    GolangBasic语法剖析
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/02-%E5%90%8E%E7%AB%AF/%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B7%A5%E5%85%B7/Hello,Python/">
+                     
+										    Hello,Python
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/02-%E5%90%8E%E7%AB%AF/%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B7%A5%E5%85%B7/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E5%B7%A7/">
+                     
+										    Java核心技巧
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2023/02/26/02-%E5%90%8E%E7%AB%AF/%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B7%A5%E5%85%B7/Vim%E7%8E%AF%E5%A2%83%E5%9F%BA%E7%A1%80/">
+                     
+										    Vim环境基础
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/hello-world/">
+                     
+										    Hello World
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+	Vim环境基础
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+	
+
+	<span>Hogg</span>
+	<span>2023-02-26 21:36:08</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+    
+  </div>
+
+</div>
+
+<!-- content -->
+<div id="article-content">
+	<h1 id="Vim从0到1"><a href="#Vim从0到1" class="headerlink" title="Vim从0到1"></a>Vim从0到1</h1><h2 id="1-Vim环境配置"><a href="#1-Vim环境配置" class="headerlink" title="1. Vim环境配置"></a>1. Vim环境配置</h2><h3 id="1-1-Windows"><a href="#1-1-Windows" class="headerlink" title="1.1 Windows"></a>1.1 Windows</h3><p>可以在<a target="_blank" rel="noopener" href="https://www.vim.org/">Vim官网</a>上下载gvim的安装包，然后双击执行。</p>
+<h3 id="1-2-Linux"><a href="#1-2-Linux" class="headerlink" title="1.2 Linux"></a>1.2 Linux</h3><p>用你所使用的发行版对应的包管理器安装即可。</p>
+<h4 id="1-3-Mac"><a href="#1-3-Mac" class="headerlink" title="1.3 Mac"></a>1.3 Mac</h4><p>Mac自带vim。</p>
+<h2 id="2-Vim模式介绍"><a href="#2-Vim模式介绍" class="headerlink" title="2.Vim模式介绍"></a>2.Vim模式介绍</h2><p><img src="/img/202302162055381.png" alt="截屏2023-02-16 20.55.14"></p>
+<p>这张图可能你并不陌生，在各大论坛、贴吧、博客都有它的身影。我们可以看到vim的上手难度非常高，但是在你上手vim之后效率远超同级别的代码编辑器（emacs除外）。</p>
+<h3 id="2-1-正常模式"><a href="#2-1-正常模式" class="headerlink" title="2.1 正常模式"></a>2.1 正常模式</h3><p>当我们在终端输入<code>vim</code>之后会进入一个黑色的编辑器，这就是vim，准确来说这是vim中的一种模式——“正常模式”。</p>
+<p>正常模式是我们高效编辑的模式。在这个模式下我们无法输入文本，只能预览文本和复制、剪切、粘贴等操作。</p>
+<h4 id="2-1-1-光标移动"><a href="#2-1-1-光标移动" class="headerlink" title="2.1.1 光标移动"></a>2.1.1 光标移动</h4><ul>
+<li><code>hjkl</code>：hjkl对应的分别是光标左、下、上、右移动的操作。这和我们常规的编辑器不同，当然你也可以用↑、↓、←、→来移动光标，但是作为一名合格的Vimmer，这就是必修课。如果你适应之后，你会发现这四个键位简直太舒服了。</li>
+<li>单词级跳转：<ul>
+<li><code>w</code>:移动到下一个<code>word</code>开头</li>
+<li><code>W</code>:也是移动到下一个<code>WORD</code>开头 </li>
+<li><code>e</code>:移动到下一个<code>word</code>结尾，不在空行停留</li>
+<li><code>E</code>:移动到下一个<code>WORD</code>结尾 ，不在空行停留</li>
+<li><code>b</code>:移动到上一个<code>word</code>开头 </li>
+<li><code>B</code>:移动到上一个<code>WORD</code>开头 </li>
+<li><code>ge</code>:移动到上一个<code>word</code>结尾</li>
+<li><code>gE</code>:移动到上一个<code>WORD</code>结尾</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>大小写的区别：</p>
+<ul>
+<li>小写的只会跳转到下个单词但是如果单词之间有符号则会优先跳转到符号上。</li>
+</ul>
+<p>eg. 在<code>aaa@bbb</code>中，我们按下w键光标会跳转到@字符上，而不是b。</p>
+<ul>
+<li>大写<code>W</code>则会跳过符号（将符号视为字母）</li>
+</ul>
+<p>eg.在<code>aaa@bbb ccc</code>中，我们按下W键，光标会直接跳转到c字符上。</p>
+</blockquote>
+<ul>
+<li>文本对象（text object）级移动<ul>
+<li><code>(</code>，移动到上一个语句开头</li>
+<li><code>)</code>，移动到下一个语句开头 </li>
+<li><code>&#123;</code>，移动到上一个段落开头</li>
+<li><code>&#125;</code>，移动到下一个段落开头 </li>
+<li><code>H</code>，窗口第一行</li>
+<li><code>M</code>，窗口中间一行</li>
+<li><code>L</code>， 窗口最后一行</li>
+<li><code>gg</code>，跳转到文档开头 </li>
+<li><code>G</code>，跳转到文档结尾</li>
+<li><code>nG</code>，跳转到文档第n行</li>
+</ul>
+</li>
+</ul>
+<p>这里重点记住<code>G</code>、<code>gg</code>、<code>nG</code>即可。</p>
+<ul>
+<li>文本编辑<ul>
+<li><code>x</code>可以删除当前光标下的字符</li>
+<li><code>dd</code>和<code>cc</code>表示删除当前行</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2023/02/26/02-%E5%90%8E%E7%AB%AF/%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B7%A5%E5%85%B7/Hello,Python/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  Hello,Python
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2023/02/26/02-%E5%90%8E%E7%AB%AF/%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B7%A5%E5%85%B7/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E5%B7%A7/">
+                Java核心技巧
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©<span id="footerYear-start"></span>-<span id="footerYear-end"></span>
+	<a href="/">Hogg</a> 
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+
+<script type="text/javascript">
+	document.getElementById('footerYear-start').innerHTML = new Date().getFullYear() + '';
+</script>
+
+<script type="text/javascript">
+	document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+</script>
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>

@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		GolangBasic语法剖析 | 
+	 
+	Hogg&#39;s Notes
+	</title>
+	
+	<!-- keywords,description -->
+	 
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "wujun234.com";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
+	
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">Hogg's Notes</a>
+
+	<ul id="menu">
+    
+
+    
+
+    
+
+    
+      
+      
+        <li class="menu-item">
+          <a href='https://github.com/wujun234/hexo-theme-tree' class="menu-item-link" target="_blank">
+            Tree
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a href='https://github.com/wujun234/uid-generator-spring-boot-starter' class="menu-item-link" target="_blank">
+            UidGenerator
+          </a>
+        </li>
+      
+    
+  
+    
+      <li class="menu-item">
+        <a href='https://github.com/wujun234' class="menu-item-link" target="_blank">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+      </li>
+    
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										02-后端
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										语言和工具
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/02-%E5%90%8E%E7%AB%AF/%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B7%A5%E5%85%B7/C++%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                     
+										    C++基础语法入门
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2023/02/26/02-%E5%90%8E%E7%AB%AF/%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B7%A5%E5%85%B7/GolangBasic%E8%AF%AD%E6%B3%95%E5%89%96%E6%9E%90/">
+                     
+										    GolangBasic语法剖析
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/02-%E5%90%8E%E7%AB%AF/%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B7%A5%E5%85%B7/Hello,Python/">
+                     
+										    Hello,Python
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/02-%E5%90%8E%E7%AB%AF/%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B7%A5%E5%85%B7/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E5%B7%A7/">
+                     
+										    Java核心技巧
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/02-%E5%90%8E%E7%AB%AF/%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B7%A5%E5%85%B7/Vim%E7%8E%AF%E5%A2%83%E5%9F%BA%E7%A1%80/">
+                     
+										    Vim环境基础
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/hello-world/">
+                     
+										    Hello World
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+	GolangBasic语法剖析
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+	
+
+	<span>Hogg</span>
+	<span>2023-02-26 21:36:08</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+    
+  </div>
+
+</div>
+
+<!-- content -->
+<div id="article-content">
+	<h1 id="第一章-Golang-开山篇"><a href="#第一章-Golang-开山篇" class="headerlink" title="第一章 Golang 开山篇"></a>第一章 Golang 开山篇</h1><h2 id="1-1-Golang-学习方向"><a href="#1-1-Golang-学习方向" class="headerlink" title="1.1 Golang 学习方向"></a>1.1 Golang 学习方向</h2><p>Go语言，我们可以简单的写成 Golang。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR;</span><br><span class="line">	A[Golang核心编程] --&gt; B(区域链研发工程师);</span><br><span class="line">	A --&gt; C(Go服务器端/游戏软件工程师);</span><br><span class="line">	A --&gt; D(Golang分布式/云计算软件工程师);</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-Golang-的应用领域"><a href="#1-2-Golang-的应用领域" class="headerlink" title="1.2 Golang 的应用领域"></a>1.2 Golang 的应用领域</h2><h3 id="1-2-1-区块链的应用开发"><a href="#1-2-1-区块链的应用开发" class="headerlink" title="1.2.1 区块链的应用开发"></a>1.2.1 区块链的应用开发</h3><p>区块链技术，简称BT(Blockchain technology)，也被称之为<strong>分布式账本技术</strong>，是一种互联网数据库技术，其特点是去<strong>中心化、公开透明</strong>， 让<strong>每个人均可参与数据库记录</strong></p>
+<img src="/img/image-20230222130922431.png" alt="image-20230222130922431" style="zoom:50%;" />
+
+<h3 id="1-2-2-后端服务器应用"><a href="#1-2-2-后端服务器应用" class="headerlink" title="1.2.2 后端服务器应用"></a>1.2.2 后端服务器应用</h3><h5 id="美团后台流量支撑程序"><a href="#美团后台流量支撑程序" class="headerlink" title="美团后台流量支撑程序"></a><strong>美团后台流量支撑程序</strong></h5><p>支撑主站后台流量（排序，推荐，搜索等），提供负载均衡，cache，容错，按条件分流，统计运行指标 (qps, latency ）等功能</p>
+<h5 id="仙侠道"><a href="#仙侠道" class="headerlink" title="仙侠道"></a><strong>仙侠道</strong></h5><p>产品网址：仙使道官网-心动游戏应用范围：游戏服务端（通讯、逻辑、 数据存储）</p>
+<img src="/img/image-20230222131018173.png" alt="image-20230222131018173" style="zoom: 50%;" />
+
+<img src="/img/image-20230222131031760.png" alt="image-20230222131031760" style="zoom:50%;" />
+
+<h3 id="1-2-3-云计算-x2F-云服务后台应用"><a href="#1-2-3-云计算-x2F-云服务后台应用" class="headerlink" title="1.2.3 云计算&#x2F;云服务后台应用"></a>1.2.3 云计算&#x2F;云服务后台应用</h3><p><strong>盛大云CDN(内容分发网络）</strong></p>
+<ul>
+<li><p>应用范围：CDN的调度系统、分发系统、 监控系统、短域名服务，CDN内部开放平台、运营报表系统以及其他一些小工具等</p>
+</li>
+<li><p>京东消息推送云服务&#x2F;京东分布式文件系统</p>
+</li>
+<li><p>应用范围：后台所有服务全部用go实现</p>
+</li>
+</ul>
+<img src="/img/image-20230222131135029.png" alt="image-20230222131135029" style="zoom:50%;" />
+
+
+
+
+
+<h1 id="第二章-Golang概述"><a href="#第二章-Golang概述" class="headerlink" title="第二章 Golang概述"></a>第二章 Golang概述</h1><h2 id="2-1-什么是程序"><a href="#2-1-什么是程序" class="headerlink" title="2.1 什么是程序"></a>2.1 什么是程序</h2><p>程序：为了让计算机执行某些操作或解决某个问题而编写的一系列有序指令的集合。</p>
+<p>程序是一组计算机能识别和执行的指令，是若干指令或命令的集合，运行于电子计算机上，满足人们某种需求的信息化工具。</p>
+<p>它以某些程序设计语言编写，运行于某种目标结构体系上。打个比方，程序就如同以英语（程序设计语言）写作的文章，要让一个懂得英语的人（编译器）同时也会阅读这篇文章的人（结构体系）来阅读、理解、标记这篇文章。一般的，以英语文本为基础的计算机程序要经过编译、链接而成为人难以解读，但可轻易被计算机所解读的数字格式，然后放入运行。</p>
+<h2 id="2-2-why-is-Go语言"><a href="#2-2-why-is-Go语言" class="headerlink" title="2.2 why is Go语言?"></a>2.2 why is Go语言?</h2><p><strong>Go语言是区块链最主流的编程语言， 同时也是当前最具发展潜力的语言。</strong></p>
+<p>Go语言是<strong>Google公司创造的语言</strong>，也是Google主推的语言。</p>
+<p>国外如Google、Aws、 Cloudflare、 Coreos等，国内如七牛、阿里、小米、京东等都己经开始大规模使用Golang开发其云计算相关产品。</p>
+<h2 id="2-3-Go语言的诞生"><a href="#2-3-Go语言的诞生" class="headerlink" title="2.3 Go语言的诞生"></a>2.3 Go语言的诞生</h2><h3 id="2-3-1-Go语言的核心开发团队"><a href="#2-3-1-Go语言的核心开发团队" class="headerlink" title="2.3.1 Go语言的核心开发团队"></a>2.3.1 Go语言的核心开发团队</h3><p><strong>Ken Thompson(肯•汤普森）</strong>^[^^1^^]^：1983年图灵奖（Turing Award）和1998年<strong>美国国家技术奖</strong> (National Medal of Technology）得主。他与Dennis Ritchie是Unix的原创者。Thompson也发明了后来術生出C语言的B程序语言，同时也是C语言的主要发明人。</p>
+<img src="https://raw.githubusercontent.com/HoggAdams/PicBed/main/.202302222040388.png" alt="image-20230222132417846" style="zoom:67%;" />
+
+<p><strong>Rob Pike(罗布.派克）</strong>^[^^2^^]^：曾是<strong>贝尔实验室</strong>（Bell Labs）的Unix团队，和Plan 9操作系统计划的成员。</p>
+<p><img src="https://raw.githubusercontent.com/HoggAdams/PicBed/main/.202302222040829.png" alt="image-20230222132446366"></p>
+<p>他与Thompson共事多年，并共创出广泛使用的UTF-8 字元编码。</p>
+<p>Robert Griesemer：曾协助制作Java的HotSpot<strong>编译器</strong>，和Chrome浏览器的JavaScript引擎V8。</p>
+<h3 id="2-3-2Google为什么要创造Go语言"><a href="#2-3-2Google为什么要创造Go语言" class="headerlink" title="2.3.2Google为什么要创造Go语言"></a>2.3.2Google为什么要创造Go语言</h3><ol>
+<li><p>计算机硬件技术更新频繁，性能提高很快。目前主流的编程语言发展明显落后于硬件，不能合理利用<strong>多核多CPU</strong>的优势提升软件系统性能。</p>
+</li>
+<li><p>软件系统复杂度越来越高，维护成本越来越高，目前<strong>缺乏一个足够简洁高效</strong>的编程语言。</p>
+</li>
+</ol>
+<blockquote>
+<p>现有的编程语言：</p>
+<ol>
+<li>风格不统一</li>
+<li>计算能力不够 </li>
+<li>处理大并发不够好</li>
+</ol>
+</blockquote>
+<ol start="3">
+<li>企业运行维护很多clc++的项目，clc++程序运行速度虽然很快，但是编译速度确很慢，同时还存在<strong>内存泄漏</strong>的一系列的困扰需要解决。</li>
+</ol>
+<h3 id="2-3-3-Go语言发展简史"><a href="#2-3-3-Go语言发展简史" class="headerlink" title="2.3.3 Go语言发展简史"></a>2.3.3 Go语言发展简史</h3><ul>
+<li><p>2007年，谷歌工程师Rob Pike, Ken ThomFson 和Robert Griesemer开始设计一门全新的语言，这是Go语言的最初原型。</p>
+</li>
+<li><p>2009年11月10日，Google将Go语言以开放源代码的方式向全球发布。</p>
+</li>
+<li><p>2015年8月19日，Go1.5版发布，本次更新中移除了”最后残余的C代码”</p>
+</li>
+<li><p>2017年2月17日，Go语言Go1.8版发布。</p>
+</li>
+<li><p>2017年8月24日，Go语言Go1.9版发布。</p>
+</li>
+<li><p>2018年2月16日，Go语言Go1.10版发布。</p>
+</li>
+</ul>
+<h2 id="2-4-Go语言特点"><a href="#2-4-Go语言特点" class="headerlink" title="2.4 Go语言特点"></a>2.4 Go语言特点</h2><p>Go语言保证了既能到达<strong>静态编译语言</strong>的安全和性能，又达到了<strong>动态语言开发维护的高效率</strong>，使用一个表达式来形容Go语言：<strong>Go &#x3D;C+ Python</strong>，说明Go语言既有c静态语言程序的运行速度，又能达到Python动态语言的快速开发。</p>
+<ol>
+<li>从c语言中继承了很多理;念，包括表达式语法，控制结构，基础数据类型，调用参数传值，指针等等，也保留了和c语言一样的编译执行方式及弱化的指针。</li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">testPtr</span><span class="params">(num *<span class="type">int</span>)</span></span> &#123;</span><br><span class="line">  *num = <span class="number">20</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>引入<strong>包的概,念</strong>，用手组织程序结构，Go语言的<strong>一个文件都要归属于一个包</strong>，而不能单独存在。</li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main <span class="comment">// 一个go文件需要在一个包</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sayHello</span></span> &#123;</span><br><span class="line">  fmt.Println(<span class="string">&quot;ok&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>垃圾回收机制，内存自动回收，不需开发人员管理。</p>
+</li>
+<li><p><strong>天然并发</strong></p>
+<ol>
+<li><p>从语言层面支持并发，实现简单。</p>
+</li>
+<li><p>goroutine，轻量级线程，<strong>可实现大并发处理</strong>，高效利用多核。</p>
+</li>
+<li><p>基于cps并发模型(Communicating Sequential Processes )实现。</p>
+</li>
+</ol>
+</li>
+<li><p>吸收了管道通信机制，形成Go语言特有的管道channel 通过管道channel，可以实现不同的goroute之间的相互通信。</p>
+</li>
+<li><p>函数返回多个值</p>
+</li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getSumAnSub</span><span class="params">(n1 <span class="type">int</span>, n2 <span class="type">int</span>)</span></span>(<span class="type">int</span>, <span class="type">int</span>) &#123;</span><br><span class="line">  sum := n1 + n2</span><br><span class="line">  sub := n1 - n2</span><br><span class="line">  <span class="keyword">return</span> sum, sub</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>新的创新：比如切片、延时执行defer等</li>
+</ol>
+<h2 id="2-5-Go语言的开发工具"><a href="#2-5-Go语言的开发工具" class="headerlink" title="2.5 Go语言的开发工具"></a>2.5 Go语言的开发工具</h2><h3 id="2-5-1-工具介绍"><a href="#2-5-1-工具介绍" class="headerlink" title="2.5.1 工具介绍"></a>2.5.1 工具介绍</h3><ol>
+<li>visual studio code：Microsoft 产品(VSCode)：一个运行于 Mac os x、 Windows和 Linux 之上的，<strong>默认提供Go语言的语法高亮</strong>，安装Go语言插件，还可以支持智能提示，編译运行等功能。</li>
+</ol>
+<ol start="2">
+<li><p>Sublime Text：可以免费使用，默认也支持Go代码语法高亮，只是保存次数达到一定数量之后就会提示是否购买， 点击取消继续用，和正式注册版本没有任何区别 </p>
+</li>
+<li><p>Vim：Vim是从vi发展出来的一个文本编辑器，代码补全、 编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用</p>
+</li>
+<li><p>Emacs：Emacs传说中的神器，她不仅仅是一个编辑器， 因为功能强大，可称它为集成开发环境</p>
+</li>
+</ol>
+<ol start="5">
+<li>Eclipse IDE工具，开源免费，并提供GoEclipse插件</li>
+<li>LiteIDE：LiteIDE是一款专门为Go语言开发的跨平台轻量级集成开发环境（1DE），是国人开发的。</li>
+<li>JetBrains公司的产品：PhpStrom、 WebStrom 和PyCharm 等IDE工具， 都需要安装Go插件。</li>
+</ol>
+<h3 id="2-5-2-工具选择"><a href="#2-5-2-工具选择" class="headerlink" title="2.5.2 工具选择"></a>2.5.2 工具选择</h3><ul>
+<li><p>如何选择开发工具</p>
+<ul>
+<li>我们先选择用visual studio code或者vim文本编辑器本，到大家对Go语言有一定了解后，我们再使用Eclipge等IDE开发工具。</li>
+</ul>
+</li>
+<li><p>这是为什么呢</p>
+<ol>
+<li>更深刻的理解Go语言技术，培养代码感。</li>
+<li>有利于公司面试。</li>
+</ol>
+</li>
+</ul>
+<h2 id="2-6-Go开发环境的搭建"><a href="#2-6-Go开发环境的搭建" class="headerlink" title="2.6 Go开发环境的搭建"></a>2.6 Go开发环境的搭建</h2><h3 id="2-6-1-Windows下搭建Go-开发环境"><a href="#2-6-1-Windows下搭建Go-开发环境" class="headerlink" title="2.6.1 Windows下搭建Go 开发环境"></a>2.6.1 Windows下搭建Go 开发环境</h3><h4 id="介绍-SDK"><a href="#介绍-SDK" class="headerlink" title="介绍 SDK"></a>介绍 SDK</h4><ul>
+<li><strong>SDK 的全称(Software Development Kit 软件开发工具包）</strong> </li>
+<li>SDK是提供给开发人员使用的，其中包含了对应开发语言的工具包。</li>
+</ul>
+<h4 id="下载-SDK工具包"><a href="#下载-SDK工具包" class="headerlink" title="下载 SDK工具包"></a>下载 SDK工具包</h4><ol>
+<li><p>Go 语言的官网为：golang.org．因为各种原因，可能无法访问。</p>
+</li>
+<li><p>SDK 下载地址：[Golang 中国](https:&#x2F;<a target="_blank" rel="noopener" href="http://www.golangtc.com/">www.golangtc.com</a> &#x2F;dowuloas)</p>
+</li>
+<li><p>如何选择对应的 sak版本</p>
+</li>
+</ol>
+<h4 id="安装-SDK工具包"><a href="#安装-SDK工具包" class="headerlink" title="安装 SDK工具包"></a>安装 SDK工具包</h4><p>将 SDK 工具包解压到你的盘符即可。</p>
+<h3 id="2-6-2-Linux-x2F-MacOS下搭建Go开发环境"><a href="#2-6-2-Linux-x2F-MacOS下搭建Go开发环境" class="headerlink" title="2.6.2 Linux&#x2F;MacOS下搭建Go开发环境"></a>2.6.2 Linux&#x2F;MacOS下搭建Go开发环境</h3><p>用你发行版对应的包管理器安装即可（基本都有go）。</p>
+<p>MacOS使用<code>HomBrew</code>即可。</p>
+<h2 id="2-7-Golang-执行流程分析"><a href="#2-7-Golang-执行流程分析" class="headerlink" title="2.7 Golang 执行流程分析"></a>2.7 Golang 执行流程分析</h2><p>如果是对源码編译后，再执行，Go的执行流程如下图：</p>
+<p><img src="https://raw.githubusercontent.com/HoggAdams/PicBed/main/.202302222040774.png" alt="image-20230222203501739"></p>
+<p>如果我们对源码直接 执行  <code>go run</code>  Go的执行流程如下图：</p>
+<p><img src="https://raw.githubusercontent.com/HoggAdams/PicBed/main/.202302222040863.png" alt="image-20230222203637275"></p>
+<blockquote>
+<h4 id="说明：两种执行流程的方式区别"><a href="#说明：两种执行流程的方式区别" class="headerlink" title="说明：两种执行流程的方式区别"></a>说明：两种执行流程的方式区别</h4><ol>
+<li><p>如果我们先编译生成了可执行文件，那么我们可以将该可执行文件拷贝到没有go开发环境的机器上，仍然可以运行</p>
+</li>
+<li><p>如果我们是直接 go run go源代码，那么如果要在另外一个机器上这么运行，也需要go 开发环境，否则无法执行。</p>
+</li>
+<li><p>在编译时，编译器会将程序运行依赖的库文件包含在可执行文件中，所以，可执行文件变大了很多。</p>
+</li>
+</ol>
+</blockquote>
+<h2 id="2-8-Golang编译运行说明"><a href="#2-8-Golang编译运行说明" class="headerlink" title="2.8 Golang编译运行说明"></a>2.8 Golang编译运行说明</h2><h3 id="2-8-1-什么是编译"><a href="#2-8-1-什么是编译" class="headerlink" title="2.8.1 什么是编译"></a>2.8.1 什么是编译</h3><ol>
+<li><p>有了go源文件，通过编译器将其编译成机器可以识别的二进制码文件。</p>
+</li>
+<li><p>在该源文件目录下，通过go build 对hello.go 文件进行编译。可以<strong>指定生成的可执行文件名</strong>，在windows下必须是 .exe 后缀。</p>
+</li>
+<li><p>如果程序没有错误，没有任何提示，会在当前目录下会出现一个可执行文件 (<strong>windows下是.exe Linux下是一个可执行文件</strong>），该文件是二进制码文件，也是可以执行的程序。</p>
+</li>
+<li><p>如果程序有错误，编译时，会在错误的那行报错。</p>
+</li>
+</ol>
+<h3 id="2-8-2-什么是运行"><a href="#2-8-2-什么是运行" class="headerlink" title="2.8.2 什么是运行"></a>2.8.2 什么是运行</h3><ol>
+<li>直接运行生成的可执行Go程序，比如hello.exe </li>
+<li>通过运行工具go run 对源代码文件进行运行。</li>
+</ol>
+<h2 id="2-9-Go-语言快速入门"><a href="#2-9-Go-语言快速入门" class="headerlink" title="2.9 Go 语言快速入门"></a>2.9 Go 语言快速入门</h2><h3 id="Go-程序开发的注意事项"><a href="#Go-程序开发的注意事项" class="headerlink" title="Go 程序开发的注意事项"></a>Go 程序开发的注意事项</h3><ol>
+<li><p>Go源文件以”go”为扩展名。</p>
+</li>
+<li><p>Go应用程序的执行入口是main()函数。</p>
+</li>
+</ol>
+<p>3.Go语言严格区分大小写。</p>
+<ol start="4">
+<li><p>Go方法由一条条语句构成，每个语句后不需要分号(<strong>Go语言会在每行后自动加分号</strong>)，这也体现出Golang的简洁性。 T</p>
+</li>
+<li><p>Go編译器是一行行进行编译的，因此我们一行就写一条语句，不能把多条语句写在同一个，否则报错</p>
+</li>
+<li><p>Go语言<strong>定义的变量</strong>或者<strong>import的包</strong>如果没有使用到，代码不能編译通过。</p>
+</li>
+<li><p>大括号都是成对出现的，缺一不可。</p>
+</li>
+</ol>
+<h2 id="2-10-Go语言转义字符"><a href="#2-10-Go语言转义字符" class="headerlink" title="2.10 Go语言转义字符"></a>2.10 Go语言转义字符</h2><ul>
+<li><p>\t ：一个制表位，实现对齐的功能</p>
+</li>
+<li><p>\n：换行符</p>
+</li>
+<li><p>\\：一个\</p>
+</li>
+<li><p>\“ ：一个”</p>
+</li>
+<li><p>\r：一个回车</p>
+</li>
+</ul>
+<h2 id="2-11-注释"><a href="#2-11-注释" class="headerlink" title="2.11 注释"></a>2.11 注释</h2><h4 id="2-11-1-介绍："><a href="#2-11-1-介绍：" class="headerlink" title="2.11.1 介绍："></a>2.11.1 介绍：</h4><p>用于注解说明解释程序的文字就是注释，<strong>注释提高了代码的阅读性</strong>；</p>
+<p>注释是一个程序员必须要具有的良好编程习惯。将自己的思想通过注释先整理出来 ，再用代码去体现。</p>
+<h4 id="2-11-2-Go语言中的注释类型"><a href="#2-11-2-Go语言中的注释类型" class="headerlink" title="2.11.2 Go语言中的注释类型"></a>2.11.2 Go语言中的注释类型</h4><p>Go支持C语言风格的大*&#x2F;块注释，也支持C+＋风格的&#x2F;&#x2F;行注释。行注释更通用，块注释主要用于针对<strong>包</strong>的详细说明或者屏蔽<strong>大块的代码</strong></p>
+<ol>
+<li><p>行注释</p>
+<ul>
+<li>基本语法：<code>// 注释内容</code></li>
+</ul>
+</li>
+<li><p>块注释（多行注释）</p>
+<ul>
+<li>基本语法：<code>/* 注释内容 */</code></li>
+<li>注意：块注释中不能嵌套块注释</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>注释是帮助程序员理解程序的，计算机不会读取其内容。</p>
+</blockquote>
+<h2 id="2-12-规范代码风格"><a href="#2-12-规范代码风格" class="headerlink" title="2.12 规范代码风格"></a>2.12 规范代码风格</h2><h4 id="2-12-1-正确的注释和注释风格："><a href="#2-12-1-正确的注释和注释风格：" class="headerlink" title="2.12.1 正确的注释和注释风格："></a>2.12.1 正确的注释和注释风格：</h4><ol>
+<li>Co官方推荐使用行注释来注释整个方法和语句。</li>
+<li>带看Go源码</li>
+</ol>
+<h4 id="2-12-2-正确的缩进和空白"><a href="#2-12-2-正确的缩进和空白" class="headerlink" title="2.12.2 正确的缩进和空白"></a>2.12.2 正确的缩进和空白</h4><ol>
+<li>使用一次tab操作，实现缩进,默认整体向右边移动，时候用shift+tab整体向左移</li>
+<li>或者使用 gofmt 来进行格式化[演示]</li>
+<li>运算符两边习惯性各加一个空格。比如：2+4*5。</li>
+</ol>
+<h1 id="第三章-变量"><a href="#第三章-变量" class="headerlink" title="第三章 变量"></a>第三章 变量</h1><h2 id="3-1-为什么需要变量"><a href="#3-1-为什么需要变量" class="headerlink" title="3.1 为什么需要变量"></a>3.1 为什么需要变量</h2><p>一个变量就是一个世界</p>
+<p><img src="https://raw.githubusercontent.com/HoggAdams/PicBed/main/.202302241752812.png" alt="image-20230222220729180"></p>
+<blockquote>
+<p><strong>变量是程序的基本组成单位</strong></p>
+</blockquote>
+<h2 id="3-2-变量介绍"><a href="#3-2-变量介绍" class="headerlink" title="3.2 变量介绍"></a>3.2 变量介绍</h2><h3 id="3-2-1-概念"><a href="#3-2-1-概念" class="headerlink" title="3.2.1 概念"></a>3.2.1 概念</h3><p>变量相当于内存中一个数据存储空间的表示，你可以把变量看做是一个房间的门牌号，通过门牌号我们可以我到房间，同样的道理，通过变量名可以访问到变量 （<strong>值</strong>）。</p>
+<h3 id="3-2-2-变量使用的基本步骤"><a href="#3-2-2-变量使用的基本步骤" class="headerlink" title="3.2.2 变量使用的基本步骤"></a>3.2.2 变量使用的基本步骤</h3><ol>
+<li>声明变量（有人也叫：定义变量）</li>
+<li>赋值</li>
+<li>使用</li>
+</ol>
+<h2 id="3-3-变量使用细节"><a href="#3-3-变量使用细节" class="headerlink" title="3.3 变量使用细节"></a>3.3 变量使用细节</h2><ol>
+<li><p>变量表示内存中的一个存储区域</p>
+</li>
+<li><p>该区域有自己的名称（变量名）和类型（数据类型）</p>
+</li>
+<li><p>Golang变量使用的三种方式</p>
+<ol>
+<li>第一种：指定变量类型，声明后若不赋值，使用默认值</li>
+<li>第二种：根据值自行判定变量类型（类型推导）</li>
+<li>第三种：省略var，注意：&#x3D;左侧的变量不应该是已经声明过的，否则会导致编译错误</li>
+</ol>
+</li>
+<li><p>多变量声明</p>
+</li>
+</ol>
+<p>在编程中，有时我们需要一次性声明多个变量，Golang也.提供这样的语法。</p>
+<h2 id="3-3-变量使用注意事项"><a href="#3-3-变量使用注意事项" class="headerlink" title="3.3 变量使用注意事项"></a>3.3 变量使用注意事项</h2><ol>
+<li><p>变量表示内存中的一个存储区域</p>
+</li>
+<li><p>该区域有自己的名称（变量名）和类型（数据类型）</p>
+</li>
+<li><p>Golang变量使用的三种方式</p>
+<ol>
+<li><p>第一种：指定变量类型，声明后若不赋值，使用默认值</p>
+</li>
+<li><p>第二种：根据值自行判定变量类型（类型推导）</p>
+</li>
+<li><p>第三种：省略var,注意：左侧的变量不应该是已经声明过的，否则会导致编译错误</p>
+</li>
+</ol>
+</li>
+<li><p>多变量声明</p>
+<ul>
+<li>在編程中，有时我们需要工次性声明多个变量，Golang也提供这样的语法</li>
+</ul>
+</li>
+<li><p>该区域的数据值可以在同一类型范围内不断变化</p>
+</li>
+<li><p>变量在同一个作用域内不能重名</p>
+</li>
+<li><p>变量-变量名+值+数据类型，这一点请大家注意。</p>
+</li>
+<li><p>Golang的变量如果没有赋初值，<strong>编译器会使用默认值</strong>，比如 int默认值0string默认值为空串</p>
+</li>
+</ol>
+<h2 id="3-4-变量的声明，初始化和赋值"><a href="#3-4-变量的声明，初始化和赋值" class="headerlink" title="3.4 变量的声明，初始化和赋值"></a>3.4 变量的声明，初始化和赋值</h2><h3 id="3-4-1-声明变量"><a href="#3-4-1-声明变量" class="headerlink" title="3.4.1 声明变量"></a>3.4.1 声明变量</h3><p><strong>基本语法：var 变量名数据类型</strong></p>
+<p><code>var a int</code> 这就是声明了一个变量,变量名是a</p>
+<p><code>var num1 float32</code>这也声明了一个变量，表示一个单精度类型的小数，变量名是num1</p>
+<h3 id="3-4-2-初始化变量"><a href="#3-4-2-初始化变量" class="headerlink" title="3.4.2 初始化变量"></a>3.4.2 初始化变量</h3><p>在声明变量的时候，就给值。</p>
+<p><code>var a int = 45 </code>这就是初始化变量a</p>
+<p>使用細节：如果声明时就直接赋值，可省略数据类型</p>
+<p><code>var b = 400</code></p>
+<h3 id="3-4-3-给变量赋值"><a href="#3-4-3-给变量赋值" class="headerlink" title="3.4.3 给变量赋值"></a>3.4.3 给变量赋值</h3><p>比如你先声明了变量：<code>var num int</code></p>
+<p>然后，再给值 <code>num=780;</code>这就是给变量赋值.</p>
+<h2 id="3-5-变量的数据类型"><a href="#3-5-变量的数据类型" class="headerlink" title="3.5 变量的数据类型"></a>3.5 变量的数据类型</h2><p>每一种数据都定义了明确的数据类型，在内存中分配了不同大小的内存空间。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">graph LR;</span><br><span class="line">	A(输入类型) --&gt; B(基本数据类型);</span><br><span class="line">	A --&gt; C(派生/复杂数据类型);</span><br><span class="line">	B --&gt; D(数值型);</span><br><span class="line">	B --&gt; E(字符型);</span><br><span class="line">	B --&gt; F(布尔型);</span><br><span class="line">	B --&gt; G(字符串);</span><br><span class="line">	C --&gt; H(指针 Pointer);</span><br><span class="line">	C --&gt; I(数组);</span><br><span class="line">	C --&gt; J(结构体 struct);</span><br><span class="line">	C --&gt; K(管道 Channel);</span><br><span class="line">	C --&gt; L(函数);</span><br><span class="line">	C --&gt; M(切片 slice);</span><br><span class="line">	C --&gt; N(接口 interface);</span><br><span class="line">	C --&gt; O(map);</span><br><span class="line">	D --&gt; P(整数类型);</span><br><span class="line">	D --&gt; Q(浮点类型);</span><br><span class="line">	E --&gt; U[没有专门的字符型 使用byte来保存单个字母字符];</span><br><span class="line">	G --&gt; V[官方将string归属到基本数据类型];</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-5-1-整数类型"><a href="#3-5-1-整数类型" class="headerlink" title="3.5.1 整数类型"></a>3.5.1 整数类型</h3><p>简单的说，就是用于存放整数值的，比如 0,-1,2345 等等。</p>
+<h5 id="整数的类型-有符号"><a href="#整数的类型-有符号" class="headerlink" title="整数的类型(有符号)"></a>整数的类型(有符号)</h5><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>有无符号</th>
+<th>占用储存空间</th>
+<th>表数范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int8</td>
+<td>有</td>
+<td>1</td>
+<td>-128~127</td>
+</tr>
+<tr>
+<td>int16</td>
+<td>有</td>
+<td>2</td>
+<td>-2^1^^5^~2^1^^5^-1</td>
+</tr>
+<tr>
+<td>int32</td>
+<td>有</td>
+<td>4</td>
+<td>-2^3^^1^~2^3^^1^-1</td>
+</tr>
+<tr>
+<td>int64</td>
+<td>有</td>
+<td>8</td>
+<td>-2^6^^3^~2^6^^3^-1</td>
+</tr>
+</tbody></table>
+<h5 id="整数的类型-无符号"><a href="#整数的类型-无符号" class="headerlink" title="整数的类型(无符号)"></a>整数的类型(无符号)</h5><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>有无符号</th>
+<th>占用储存空间</th>
+<th>表数范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>uint8</td>
+<td>无</td>
+<td>1</td>
+<td>-128~127</td>
+</tr>
+<tr>
+<td>uint16</td>
+<td>无</td>
+<td>2</td>
+<td>-2^1^^5^~2^1^^5^-1</td>
+</tr>
+<tr>
+<td>uint32</td>
+<td>无</td>
+<td>4</td>
+<td>-2^3^^1^~2^3^^1^-1</td>
+</tr>
+<tr>
+<td>uint64</td>
+<td>无</td>
+<td>8</td>
+<td>-2^6^^3^~2^6^^3^-1</td>
+</tr>
+</tbody></table>
+<h5 id="整数的类型"><a href="#整数的类型" class="headerlink" title="整数的类型"></a>整数的类型</h5><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>有无符号</th>
+<th>占用储存空间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Int</td>
+<td>有</td>
+<td>4&#x2F;8</td>
+</tr>
+<tr>
+<td>uint</td>
+<td>无</td>
+<td>4&#x2F;8</td>
+</tr>
+<tr>
+<td>rune</td>
+<td>有</td>
+<td>与int32一样</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>无</td>
+<td>与uint8 等价</td>
+</tr>
+</tbody></table>
+<h4 id="整数的使用细节"><a href="#整数的使用细节" class="headerlink" title="整数的使用细节"></a>整数的使用细节</h4><ol>
+<li><p>Golang各整数类型分：有符号和无符号，int uint 的大小和系统有关。</p>
+</li>
+<li><p>Golang的整型默认声明为 int 型</p>
+</li>
+<li><p>如何在程序查看某个变量的<strong>字节大小</strong>和<strong>数据类型</strong></p>
+</li>
+<li><p>Golang程序中整型变量在使用时，遵守保小不保大的原则，即：在保证程序正确运行下，尽量使用占用空间小的数据类型。【如：年龄】</p>
+</li>
+<li><p><strong>bit:计算机中的最小存储单位。byte:计算机中基本存储单元。</strong></p>
+</li>
+</ol>
+<h3 id="3-5-2-浮点类型"><a href="#3-5-2-浮点类型" class="headerlink" title="3.5.2 浮点类型"></a>3.5.2 浮点类型</h3><p>小数类型就是用于存放小数的，比如 1.2 0.23 -1.911</p>
+<h5 id="浮点型的分类"><a href="#浮点型的分类" class="headerlink" title="浮点型的分类"></a>浮点型的分类</h5><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>占用储存空间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单精度 float32</td>
+<td>4</td>
+</tr>
+<tr>
+<td>双精度 float64</td>
+<td>8</td>
+</tr>
+</tbody></table>
+<blockquote>
+<h4 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h4><ol>
+<li><p>关于浮点数在机器中存放形式的简单说朗,<strong>浮点数&#x3D;符号位+指数位+尾数位</strong></p>
+</li>
+<li><p>尾数部分可能丢失，造成精度损失。-123.0000901</p>
+</li>
+<li><p>浮点型的存储分为三部分：符号位+指数位+尾数位在存储过程中，精度会有丢失</p>
+</li>
+</ol>
+</blockquote>
+<h4 id="浮点数使用细节"><a href="#浮点数使用细节" class="headerlink" title="浮点数使用细节"></a>浮点数使用细节</h4><ol>
+<li><p>Golang 浮点类型有固定的范围和字段长度，不受具体OS(操作系统)的影</p>
+</li>
+<li><p>Golang 的浮点型默认声明为float64 类型。</p>
+</li>
+<li><p>浮点型常量有两种表示形式</p>
+<ul>
+<li><p>十进制数形式</p>
+<p>eg. 5.12 .512 (必须有小数点）</p>
+</li>
+<li><p>科学计数法形式</p>
+<p>eg. 5.1234e2&#x3D; 5.12*10^2^ 5.12E-2&#x3D; 5.12&#x2F;10^-^^2^</p>
+</li>
+</ul>
+</li>
+<li><p>通常情况下，应该使用 float64，因为它比float32 更精确。</p>
+</li>
+</ol>
+<h4 id="3-5-3-字符类型"><a href="#3-5-3-字符类型" class="headerlink" title="3.5.3 字符类型"></a>3.5.3 字符类型</h4><p><strong>Golang中没有专门的字符类型</strong>，如果要存储单个字符(字母)，一般使用byte来保存。</p>
+<p><strong>字符串就是一串固定长度的字符连接起来的字符序列</strong>，Go的字符串是由单个字节连接起来的。</p>
+<p>也就是说对于传统的字符串是由字符组成的，而<strong>Go的字符串不同</strong>，它是<strong>由字节组成的</strong>。</p>
+<blockquote>
+<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><ol>
+<li>如果我们保存的字符在 ASCI 表的,比如[0-1,a-Z,A-Z.]直接可以保存到 byte</li>
+<li>如果我们保存的字符对应码值大于255,这时我们可以考虑使用 int 类型保存</li>
+<li>如果我们需要安装字符的方式输出，这时我们需要格式化输出，即<code>fntPintf(&quot;%c&quot;, varName)</code></li>
+</ol>
+</blockquote>
+<h5 id="字符类型开发细节"><a href="#字符类型开发细节" class="headerlink" title="字符类型开发细节"></a>字符类型开发细节</h5><ol>
+<li><p>字符常量是用单引号(“)括起来的单个字符。例如：<code>var c1 byte =&#39;a&#39; var c2 int = 中&quot; var c3 byte =&#39;9&#39;</code>。</p>
+</li>
+<li><p>Go中允许使用转义字符<code>\</code>来将其后的字符转变为特殊字符型常量。例如：<code>var c3 char =&#39;\n&#39; //n</code>表示换行符 Go语言的字符使用UTF-8编码。</p>
+</li>
+<li><p>在Go中，字符的本质是一个整数，直接输出时，是该字符对应的UTF-8编码的码值。</p>
+</li>
+<li><p>可以直接给某个变量赋一个数字，然后按格式化输出时%c， 会输出该数字对应的unicode 字符。</p>
+</li>
+<li><p>字符类型是可以进行运算的，相当于一个整数，因为它都对应有<strong>Unicode码</strong>。</p>
+</li>
+</ol>
+<h4 id="3-5-4-布尔类型"><a href="#3-5-4-布尔类型" class="headerlink" title="3.5.4 布尔类型"></a>3.5.4 布尔类型</h4><ol>
+<li><p>布尔类型也叫bool类型，bool类型数据只允许取值true和false </p>
+</li>
+<li><p>bool类型占1个字节。</p>
+</li>
+<li><p>boolean 类型适于逻辑运算，一般用于程序流程控制</p>
+</li>
+<li><p>多用于<code>if条件语句</code>或<code>for循环语句</code></p>
+</li>
+</ol>
+<h4 id="3-5-5-字符串数据类型"><a href="#3-5-5-字符串数据类型" class="headerlink" title="3.5.5 字符串数据类型"></a>3.5.5 字符串数据类型</h4><p>字符串就是一串固定长度的字符连接起来的字符序列。Go的字符串是由<strong>单个字节</strong>连接起来的。Go语言的字符串的字节使用UTF-8编码标识Unicode文本。</p>
+<h4 id="字符串数据注意事项"><a href="#字符串数据注意事项" class="headerlink" title="字符串数据注意事项"></a>字符串数据注意事项</h4><ol>
+<li><p>Go语言的字符串的字节使用UTF-8编码标识Unicode文本，这样Golang统一使用 UTF-8编码， 中文乱码问题不会再困扰程序员。</p>
+</li>
+<li><p>字符串一旦赋值了，字符串就不能修改了：在Go中字符串是不可变的。</p>
+</li>
+<li><p>字符串的两种表示形式</p>
+<ol>
+<li><p>双引号，会识别转义字符</p>
+</li>
+<li><p>反引号，以字符串的原生形式输出，包括换行和特殊字符，可以实现防业攻击、输出源代码等效果</p>
+</li>
+</ol>
+</li>
+<li><p>字符串拼接：当一行字符串太长时，需要使用到多行字符串</p>
+</li>
+</ol>
+<h4 id="基本数据类型的默认值"><a href="#基本数据类型的默认值" class="headerlink" title="基本数据类型的默认值"></a>基本数据类型的默认值</h4><p>在go中，数据类型都有一个默认值，当程序员没有赋值时，就会保留默认值，在go中，默认值又叫零值。</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>整型</td>
+<td>0</td>
+</tr>
+<tr>
+<td>浮点型</td>
+<td>0</td>
+</tr>
+<tr>
+<td>字符串</td>
+<td>“”</td>
+</tr>
+<tr>
+<td>布尔类型</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<h2 id="3-6-基本数据类型转换"><a href="#3-6-基本数据类型转换" class="headerlink" title="3.6 基本数据类型转换"></a>3.6 基本数据类型转换</h2><h3 id="3-6-1-介绍"><a href="#3-6-1-介绍" class="headerlink" title="3.6.1 介绍"></a>3.6.1 介绍</h3><p>Golang 和java&#x2F;c不同，Go 在不同类型的变量之问赋值时需要显式转换。也就是说Golang中数据类型<strong>不能自动转换</strong>。</p>
+<h3 id="3-6-2-基本语法"><a href="#3-6-2-基本语法" class="headerlink" title="3.6.2 基本语法"></a>3.6.2 基本语法</h3><p>表达式<code>T(v)</code>将值v转化为类型T</p>
+<h3 id="2-6-3-细节说明"><a href="#2-6-3-细节说明" class="headerlink" title="2.6.3 细节说明"></a>2.6.3 细节说明</h3><ol>
+<li><p>Go中，数据类型的转换可以是从表示范围小-&gt;表示范围大，也可以范围大-&gt;范围小</p>
+</li>
+<li><p>被转换的是<strong>变量存储的数据</strong>(即值)，变量本身的数据类型并没有变化！</p>
+</li>
+<li><p>在转换中，比如将 int64 转成int8，编译时不会报错，只是转换的结果是按溢出处理，和我们希望的结果不一样。</p>
+</li>
+</ol>
+<h2 id="3-7-基本数据类型转换为String类型"><a href="#3-7-基本数据类型转换为String类型" class="headerlink" title="3.7 基本数据类型转换为String类型"></a>3.7 基本数据类型转换为String类型</h2><p>在程序开发中，我们经常将基本数据类型转成 sting.或者将 string 转成基本数据类型。</p>
+<h3 id="3-7-1-基本类型转String类型"><a href="#3-7-1-基本类型转String类型" class="headerlink" title="3.7.1 基本类型转String类型"></a>3.7.1 基本类型转String类型</h3><ol>
+<li><p><code>fmt.Sprintf(%参数”，表达式)</code>【个人习惯这个，灵活】 </p>
+<ol>
+<li>参数需要和表达式的数据类型相匹配</li>
+<li>fmt.Sprintf).会返回转换后的字符串</li>
+</ol>
+</li>
+<li><p>使用strconv包的函数</p>
+</li>
+</ol>
+<h3 id="3-7-2-String类型转基本类型"><a href="#3-7-2-String类型转基本类型" class="headerlink" title="3.7.2 String类型转基本类型"></a>3.7.2 String类型转基本类型</h3><p>使用 strconv包的函数</p>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2023/02/26/02-%E5%90%8E%E7%AB%AF/%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B7%A5%E5%85%B7/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E5%B7%A7/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  Java核心技巧
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2023/02/26/02-%E5%90%8E%E7%AB%AF/%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B7%A5%E5%85%B7/C++%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                C++基础语法入门
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©<span id="footerYear-start"></span>-<span id="footerYear-end"></span>
+	<a href="/">Hogg</a> 
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+
+<script type="text/javascript">
+	document.getElementById('footerYear-start').innerHTML = new Date().getFullYear() + '';
+</script>
+
+<script type="text/javascript">
+	document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+</script>
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
